@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;500;600;700&display=swap');
+@import "Mixin";
+:root{
+    /*================== Colors ==================*/
+    --Color-Principal: #00474B;
+    --Color-bg: #C5E4E7;
+    --Color-txt: #1DC5AC;
+    --body-bg: #fff;
+    --comple: #F3F8FB;
+    /*================== Font Size ==================*/
+    --h2-font: 1.25rem;
+    --normal-font: .938rem;
+    --small-font: .75rem;
+    --smaller-font: .625rem;
+    --font-weight-2: 700; 
+    /*================== Margin ==================*/
+    --margin: 1rem;
+    --margin-desktop: 3rem;
+    /*================== Border ==================*/
+    --border: 2rem;
+}
+
+//<!--================== GENERALES ==================-->
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+body{
+    background: var(--Color-bg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+//<!--================== HEAD ==================-->
+.Head{
+    height: 10.5vh;
+    @include Section();
+    justify-content: center;
+    .Logo{
+        width: 8rem;
+    }
+}
+//<!--================== HEADER ==================-->
+.Promedio{
+    height: 950px;
+    @include Section();
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    background: var(--body-bg);
+    border-radius: var(--border);
+    box-shadow: 0px 0px 7px #aeafb1;
+
+    //<!--================== SECTION INGRESO ==================-->
+    .Promedio__Container--Ingreso{
+        @include Container();
+        width: 40%;
+
+        //<!-- CONTAINER LABELS -->
+        .Container--Labels{
+            @include Section();
+            justify-content: center;
+            flex-direction: row;
+            margin: var(--margin);
+
+            //<!-- LABELS -->
+            .Labels{
+                @include Container();
+                margin: 0;
+                .txt{
+                    color: var(--Color-Principal);
+                    font-size: var(--small-font);
+                    margin: 1rem 0;
+                    font-weight: 400;
+                }
+
+                //<!-- INPUTS TYPE NUMBER -->
+                .PC{
+                    @include Inputs();
+                }
+                #P-Desea{
+                    border: 1px solid var(--Color-Principal);
+                    background: none;
+                    
+                }
+                //<!-- QUITAR ESTILO DEL INPUT NUMBER-->
+                input[type=number]::-webkit-inner-spin-button,
+                input[type=number]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+        }
+
+        //<!-- CONTAINER BUTTON -->
+        .Container--Btn{
+            @include Container();
+            height: 5rem;
+            //<!-- BUTTON -->
+            .Btn--Procesar{
+                @include Button();
+                width: 40%;
+            }
+        }
+    }
+    .Promedio__Container--Resultados{
+        @include Section();
+        width: 40%;
+        background: var(--Color-Principal);
+        border-radius: var(--border);
+
+        //<!-- CONTAINER TITLE -->
+        .Resultados__Container--Title{
+            @include Container();
+            height: calc(100%/6);
+
+            //<!-- TITLE -->
+            .Title{
+                font-size: var(--h2-font);
+                font-weight: 700;
+                letter-spacing: .15rem;
+                color: var(--Color-txt);
+            }
+        }
+
+        //<!-- CONTAINER RESULTADOS -->
+        .Container--Resultados{
+            @include Container();
+            height: calc(100%/2);
+
+            //<!-- RESULTADOS -->
+            .Resultados{
+                @include Container();
+                height: calc(100%/4);
+                justify-content: space-between;
+                width: 90%;
+                flex-direction: row;
+
+                //<!--RESPUESTAS -->
+                .Rpta{
+                    @include Inputs();
+                    align-items: center;
+                }
+                .txt{
+                    color: var(--body-bg);
+                    letter-spacing: .15rem;
+                    font-size: var(--small-font);
+                }
+            }
+        }
+        
+        //<!-- CONTAINER BUTTON -->
+        .Container--Btn{
+            @include Container();
+            height: 5rem;
+            //<!-- BUTTON -->
+            .Btn--Limpiar{
+                @include Button();
+                background: var(--Color-txt);
+                width: 40%;
+            }
+        }
+    }
+}
+//<!--================== Footer ==================-->
+.Footer{
+    @include Section();
+    .Footer__Container--Pie{
+        @include Container();
+        font-size: var(--smaller-font);
+        letter-spacing: .15rem;
+        color: var(--Color-Principal);
+    }
+}
+
+/*================== ALERTA ==================*/
+.swal2-show{
+    width: 30% !important;
+    border-radius: var(--border)!important;
+    /*------------- ICONS -------------*/
+    .swal2-icon.swal2-error{
+        height: 40px;
+        width: 40px;
+        border: 2px solid;
+        border-color: var(--Color-Principal) !important;
+        .swal2-x-mark-line-left, .swal2-x-mark-line-right{
+            top: .55em !important;
+            width: .1em !important;
+            height: 1.5rem !important;
+            background: var(--Color-Principal) !important;
+        }
+        .swal2-x-mark-line-left{
+            left: 47% !important;
+        }
+        .swal2-x-mark-line-right{
+            right: 47% !important;
+        }
+    }
+    /*------------- CONTAINER -------------*/
+    .swal2-html-container{
+        font-size: var(--small-font);
+    }
+    /*------------- TITLE -------------*/
+    .swal2-title{
+        font-size: var(--h2-font);
+        font-weight: var(--font-weight-2);
+        color: var(--Color-Principal);
+    }
+    /*------------- BUTTON -------------*/
+    .swal2-styled.swal2-confirm{
+        background: var(--Color-Principal) !important;
+        box-shadow: none !important;
+    }
+}
+//<!--================== MEDIA QUERYS ==================-->
+@media screen and (max-width: 870px) {
+    body{
+        .Promedio{
+            flex-direction: column;
+            .Promedio__Container--Ingreso{
+               width: 90%;
+               height: 45%;
+               .Container--Btn{
+                //<!-- BUTTON -->
+                .Btn--Procesar{
+                    @include Button();
+                    background: var(--Color-Principal);
+                    width: 60%;
+                }
+            }
+            }
+            .Promedio__Container--Resultados{
+                width: 90%;
+                height: 45%;
+                //<!-- CONTAINER BUTTON -->
+                .Container--Btn{
+                    //<!-- BUTTON -->
+                    .Btn--Limpiar{
+                        @include Button();
+                        background: var(--Color-txt);
+                        width: 60%;
+                    }
+                }
+            }
+        }
+        /*================== ALERTA ==================*/
+        .swal2-show{
+            width: 90% !important;
+        }
+    }
+}

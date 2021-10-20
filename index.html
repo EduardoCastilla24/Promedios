@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--================== Estilos CSS ==================-->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="icon" type="image/png" href="img/Favicon.svg" sizes="72x72">
+    <title>Promedio</title>
+</head>
+<body>
+    <!--================== HEAD ==================-->
+    <section class="Head">
+        <span class="Logo"><img src="img/Logo.svg"></span>
+    </section>
+    <!--================== HEADER ==================-->
+    <section class="Promedio">
+        <!--================== SEECION INGRESO ==================-->
+        <div class="Promedio__Container--Ingreso">
+            <!-- CONTAINER LABELS -->
+            <div class="Container--Labels">
+                <span class="Labels">
+                    <label for="PC-1" class="txt">Pc 1</label>
+                    <input class="PC PC1" name="PC-1" type="number" id="PC-1">
+                </span>
+                <span class="Labels">
+                    <label for="PC-2" class="txt">Pc 2</label>
+                    <input class="PC PC2" name="PC-2" type="number" id="PC-2">
+                </span>
+            </div>
+             <!-- CONTAINER LABELS -->
+            <div class="Container--Labels">
+                <span class="Labels">
+                    <label for="PC-3" class="txt">Pc 3</label>
+                    <input class="PC PC3" name="PC-3" type="number" id="PC-3">
+                </span>
+                <span class="Labels">
+                    <label for="PC-4" class="txt">Pc 4</label>
+                    <input class="PC PC4" name="PC-4" type="number" id="PC-4">
+                </span>
+            </div>
+            <!-- CONTAINER LABELS -->
+            <div class="Container--Labels">
+                <span class="Labels">
+                    <label for="E-P" class="txt">E. Parcial</label>
+                    <input class="PC E-p" name="E-P" type="number" id="E-P">
+                </span>
+                <span class="Labels">
+                    <label for="P-Desea" class="txt">Prom. Deseado</label>
+                    <input class="PC P-Desea" name="P-Desea" type="number" id="P-Desea">
+                </span>
+            </div>
+            <div class="Container--Btn">
+                <button class="Btn--Procesar" id="Btn--Procesar" onclick="Ingreso(); Promedio()">Promediar</button>
+            </div>
+        </div>
+        <!--================== SECCION RESULTADOS ==================-->
+        <div class="Promedio__Container--Resultados">
+            <div class="Resultados__Container--Title">
+                <span class="Title">Resultados</span>
+            </div>
+            <!-- CONTAINER LABELS -->
+            <div class="Container--Resultados">
+                <span class="Resultados">
+                    <label for="Promedio" class="txt">Promedio:</label>
+                    <input class="Rpta" name="Promedio" type="number" id="Promedio" readonly>
+                </span>
+                <span class="Resultados">
+                    <label for="Estado" class="txt">Estado:</label>
+                    <input class="Rpta" name="Estado" type="txt" id="Estado" readonly>
+                </span>
+                <span class="Resultados">
+                    <label for="Need" class="txt">Necesita:</label>
+                    <input class="Rpta" name="Need" type="text" id="Need" readonly>
+                </span>
+                <span class="Resultados">
+                    <label for="Min" class="txt">Nota E-F:</label>
+                    <input class="Rpta" name="Min" type="number" id="Min" readonly>
+                </span>
+            </div>
+            <div class="Container--Btn">
+                <button class="Btn--Limpiar" onclick="Limpiar()">Limpiar</button>
+            </div>
+        </div>
+    </section>
+    <!--================== FOOTER ==================-->
+    <section class="Footer">
+        <div class="Footer__Container--Pie">
+            By Eduardo Castilla
+        </div>
+    </section>
+     <!--================== SCRIPTs ALERTA ==================-->
+     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--================== MEDIA QUERYS ==================-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <!--================== SCRIPTS ==================-->
+    <script src="js/Promedio.js"></script>
+</body>
+</html>
